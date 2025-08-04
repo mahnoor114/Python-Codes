@@ -1,0 +1,22 @@
+<!-- templates/question.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Question {{ index + 1 }}</title>
+</head>
+<body>
+    <h2>Question {{ index + 1 }} of 5</h2>
+    <p>{{ q.question }}</p>
+
+    <form method="post">
+        {% for option in q.options %}
+            <label>
+                <input type="radio" name="option" value="{{ option }}" required>
+                {{ option }}
+            </label><br>
+        {% endfor %}
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
